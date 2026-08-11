@@ -1,0 +1,325 @@
+```html
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เว็บไซต์ครูปาริฉัตร</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Tahoma", "Arial", sans-serif;
+            background-image: url("https://dodoopla.github.io/krupla/bg2.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        /* พื้นที่หลัก */
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.93);
+            border-radius: 25px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* ส่วนหัว */
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        header h1 {
+            color: #8e44ad;
+            font-size: 36px;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            color: #777;
+            font-size: 17px;
+        }
+
+        .line {
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, #8e44ad, #e91e63);
+            margin: 15px auto;
+            border-radius: 10px;
+        }
+
+        /* เมนู */
+        nav {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        nav a {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: #8e44ad;
+            padding: 8px 18px;
+            margin: 5px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: #e91e63;
+            transform: translateY(-3px);
+        }
+
+        /* โปรไฟล์ */
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            background: linear-gradient(135deg, #f8eaff, #fff0f6);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+        }
+
+        .profile img {
+            width: 220px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 6px solid white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .profile-info h2 {
+            color: #8e44ad;
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+
+        .profile-info p {
+            font-size: 18px;
+            margin: 8px 0;
+        }
+
+        /* กล่องข้อมูล */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .card {
+            padding: 22px;
+            border-radius: 18px;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .card h3 {
+            margin-bottom: 8px;
+            color: #8e44ad;
+        }
+
+        .favorite {
+            color: #e91e63;
+            font-weight: bold;
+        }
+
+        .hobby {
+            color: #e67e22;
+            font-weight: bold;
+        }
+
+        .dream {
+            color: #2980b9;
+            font-weight: bold;
+        }
+
+        /* บทความ */
+        .article {
+            margin-top: 30px;
+            padding: 30px;
+            background: linear-gradient(135deg, #fff7e6, #fff);
+            border-left: 7px solid #f39c12;
+            border-radius: 15px;
+        }
+
+        .article h2 {
+            color: #d35400;
+            margin-bottom: 15px;
+        }
+
+        .article p {
+            text-align: justify;
+            font-size: 17px;
+        }
+
+        /* ส่วนท้าย */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: #777;
+        }
+
+        /* รองรับมือถือ */
+        @media (max-width: 700px) {
+
+            .container {
+                width: 95%;
+                padding: 20px;
+                margin: 20px auto;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            .profile {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile img {
+                width: 200px;
+                height: 280px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                padding: 6px 12px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ส่วนหัวเว็บไซต์ -->
+    <header>
+        <h1>🌸 เว็บไซต์ครูปาริฉัตร 🌸</h1>
+        <p>ยินดีต้อนรับสู่เว็บไซต์ประวัติส่วนตัว</p>
+        <div class="line"></div>
+    </header>
+
+    <!-- เมนู -->
+    <nav>
+        <a href="#profile">ประวัติส่วนตัว</a>
+        <a href="#favorite">สิ่งที่ชอบ</a>
+        <a href="#article">บทความสุขภาพ</a>
+    </nav>
+
+    <!-- โปรไฟล์ -->
+    <section class="profile" id="profile">
+
+        <img src="https://dodoopla.github.io/krupla/pp.jpg"
+             alt="รูปโปรไฟล์ครูปาริฉัตร">
+
+        <div class="profile-info">
+
+            <h2>👩‍🏫 ครูปาริฉัตร ช่อชิต</h2>
+
+            <p><b>ชื่อเล่น :</b> ปลา</p>
+
+            <p><b>วัน/เดือน/ปีเกิด :</b> ................................</p>
+
+            <p><b>อายุ :</b> .......... ปี</p>
+
+            <p><b>อาชีพ :</b> ครู</p>
+
+            <p><b>วิชาที่ชอบ :</b> 💻 วิทยาการคำนวณ</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ข้อมูลที่ชอบ -->
+    <section id="favorite">
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>💻 วิชาที่ชอบ</h3>
+                <p class="favorite">วิทยาการคำนวณ</p>
+            </div>
+
+            <div class="card">
+                <h3>🍲 อาหารที่ชอบ</h3>
+                <p class="favorite">ชาบู และหมูกระทะ</p>
+            </div>
+
+            <div class="card">
+                <h3>🎬 งานอดิเรก</h3>
+                <p class="hobby">ดูหนัง และร้องเพลง</p>
+            </div>
+
+            <div class="card">
+                <h3>🚀 อาชีพที่ใฝ่ฝัน</h3>
+                <p class="dream">วิศวกร</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- บทความสุขภาพ -->
+    <section class="article" id="article">
+
+        <h2>💚 บทความสุขภาพ</h2>
+
+        <p>
+            GLP-1 (Glucagon-like peptide-1) คือฮอร์โมนที่ลำไส้ของเรา
+            สร้างขึ้นตามธรรมชาติเมื่อเรารับประทานอาหาร
+            โดยมีส่วนช่วยส่งสัญญาณเกี่ยวกับความอิ่มไปยังสมอง
+            และเกี่ยวข้องกับการควบคุมระดับน้ำตาลในเลือด
+            รวมถึงกระบวนการทำงานของระบบเผาผลาญ
+        </p>
+
+        <p style="margin-top:15px;">
+            ปัจจุบันมีการพัฒนายาที่ออกฤทธิ์เลียนแบบ GLP-1
+            เพื่อใช้ในการรักษาภาวะทางการแพทย์บางประเภท
+            อย่างไรก็ตาม การใช้ยาควรอยู่ภายใต้คำแนะนำ
+            และการดูแลของบุคลากรทางการแพทย์
+        </p>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>🌷 เว็บไซต์ครูปาริฉัตร ช่อชิต 🌷</p>
+        <p>© 2026 Personal Profile Website</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
+```
